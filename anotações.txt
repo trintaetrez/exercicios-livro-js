@@ -1,0 +1,6 @@
+Math.sqrt() --> faz a raiz quadrada
+Number.isInteger() --> verifica se um número é inteiro
+if (var % 1 == 0) {...} --> se o resto da divisão da variável for igual a zero, o número será inteiro.
+return --> teste de validação, recarrega a página
+focus ??
+Math.floor() --> arredonda o valor para baixo
