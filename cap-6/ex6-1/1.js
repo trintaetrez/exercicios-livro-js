@@ -40,3 +40,18 @@ frm.btUrgencia.addEventListener("click", () => {
     frm.inPaciente.value = "" // limpa conteúdo do campo de formulário
     frm.inPaciente.focus() // posiciona o cursor no campo
 })
+
+frm.btAtender.addEventListener("click", () => {
+    // se o tamanho do vetor = 0
+    if(pacientes.length == 0) {
+        alert("Não há pacientes na lista de espera")
+        frm.inPaciente.focus()
+        return
+    }
+
+    const atender = pacientes.shift() // remove do início da fila (e obtém nome)
+    respNome.innerText = atender // exibe nome do paciente em atendimento
+    let lista = "" // string par concatenar pacientes
+    pacientes.forEach((paciente, i) => (lista += `${i + 1}. ${paciente}\n`))
+    respLista.innerText = lista // exibe a lista de pacientes na página
+})
