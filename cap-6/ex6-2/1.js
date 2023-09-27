@@ -4,7 +4,7 @@ const respChances = document.querySelector("#outChances")
 const respDica = document.querySelector("#outDica")
 
 const erros = [] // vetor de escopo global com números já apostados
-const sorteado = Math.floor(Math.random() *100) + 1 // num aleatório entre 1 e 100
+const sorteado = Math.floor(Math.random() * 100) + 1 // num aleatório entre 1 e 100
 const CHANCES = 6 // constante com número máximo de chances
 
 frm.addEventListener("submit", (e) => { // "escuta" evento submit do form
@@ -38,4 +38,7 @@ frm.addEventListener("submit", (e) => { // "escuta" evento submit do form
     }
     frm.inNumero.value = "" // limpa campo de entrada
     frm.inNumero.focus() // posiciona cursor neste campo
+})
+frm.btNovo.addEventListener("click", () => {
+    location.reload() // recarrega a página
 })
