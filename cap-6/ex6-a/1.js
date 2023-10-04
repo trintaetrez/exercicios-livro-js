@@ -23,4 +23,17 @@ frm.btListar.addEventListener("click", () => {
     frm.inClube.focus()
 })
 
-console.log(clubes);
+frm.inMontar.addEventListener("click", () => {
+    const tam = clubes.length
+    if (tam % 2 != 0) {
+        alert("Não é possível montar a tabela com número ímpar de times. Adicione mais um time. ")
+        frm.inClube.focus()
+        return
+    }
+    let tabela = ""
+    const ultimo = tam - 1
+    for (let i = 0; i < tam / 2; i++) {
+        tabela += `${clubes[i]} X ${clubes[ultimo - i]}\n`
+    }
+    resp.innerText = tabela
+})
