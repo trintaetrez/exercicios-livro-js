@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de função com passagem de parâmetro</title>
+</head>
+<body>
+    <script>
+        const situacao = (nota, media) => {
+            if (nota >= media) {
+                alert("Aprovado")
+            } else {
+                alert("reprovado")
+            }
+        }
+
+        const prova1 = Number(prompt("Qual Nota: "))
+        situacao(prova1, 7) // chama a função situacao passando 2 parâmetros
+    </script>
+</body>
+</html>
