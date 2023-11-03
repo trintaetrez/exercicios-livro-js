@@ -26,12 +26,12 @@ const mostrarProdutos = () => {
     }
 
     const produtos = localStorage.getItem("produtoNome").split(";")
-    console.log(produtos)
+    const produtosOrdem = produtos.sort()
 
     let linhas = ""
 
-    for (let i = 0; i < produtos.length; i++) {
-        linhas +=  `${produtos[i]}\n`
+    for (let i = 0; i < produtosOrdem.length; i++) {
+        linhas +=  `${produtosOrdem[i]}\n`
     }
 
     respLista.innerText = `Produtos Adicionados\n--------------------------\n${linhas}`
@@ -40,4 +40,12 @@ const mostrarProdutos = () => {
 
 window.addEventListener("load", mostrarProdutos)
 
-// fazer botão reset e colocar vetor produtos em ordem alfabética
+frm.btLimpar.addEventListener("click", () => {
+    if (confirm("Confirma exclusão de todos os produtos?")) {
+        localStorage.removeItem("produtoNome")
+        mostrarProdutos()
+    } else {
+        alert("A lista esta vazia!")
+    }
+})
+
