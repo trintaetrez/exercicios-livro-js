@@ -1,6 +1,7 @@
 const frm = document.querySelector("form");
 const imClube = document.querySelector("#imgClube");
 const dvTitulo = document.querySelector("#divTitulo");
+const resp = document.querySelector("#respA")
 
 const trocarClube = () => {
     let clube // variável que irá receber o nome do clube
@@ -45,3 +46,23 @@ const verificarClube = () => {
 }
 // ao carregar a página, verifica se cliente já selecionou clube anteriormente
 window.addEventListener("load", verificarClube)
+
+const contadorVisitas = () => {
+    if (localStorage.getItem("clube")) {
+        resp.className = "respexa"
+        let resposta = "Que bom que você voltou! Esta é a sua visita de número x ao site"
+        resp.innerText = resposta
+    } else {
+        resp.className = "respexa"
+        let resposta = "Muito bem-vindo ! Esta é a sua primeira visita ao nosso site."
+        resp.innerText = resposta 
+    }
+}
+
+window.addEventListener("load", contadorVisitas)
+
+frm.btLimpar.addEventListener("click", () => {
+    if (confirm("Confirma exclusão do time?")) {
+        localStorage.removeItem("clube")
+    }
+})

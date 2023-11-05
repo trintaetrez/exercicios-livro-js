@@ -2,3 +2,25 @@ pre { font-size: 1.2em; }
 .cores-Brasil { color: black; background-color: red; }
 .cores-Pelotas { color: blue; background-color: yellow; }
 .cores-Farroupilha { color: green; background-color: white; }
+
+.respexa {
+    font-size: 20pt;
+    background-color: aqua;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.displaynone {
+    display: none;
+}
+
+#btLimpar {
+    background-color: lightgray;
+    margin-top: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    margin-left: 75px;
+    font-weight: bolder;
+}
