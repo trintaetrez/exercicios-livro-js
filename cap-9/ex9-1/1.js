@@ -48,9 +48,11 @@ const verificarClube = () => {
 window.addEventListener("load", verificarClube)
 
 const contadorVisitas = () => {
+    let contador = 0;
     if (localStorage.getItem("clube")) {
+        contador++
         resp.className = "respexa"
-        let resposta = "Que bom que você voltou! Esta é a sua visita de número x ao site"
+        let resposta = `Que bom que você voltou! Esta é a sua visita de número ${contador} ao site`
         resp.innerText = resposta
     } else {
         resp.className = "respexa"
